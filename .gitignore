@@ -23,3 +23,6 @@ TestResults.xml
 #Images with training dataset
 train/
 train/*
+#Images with testing dataset
+test/
+test/*
