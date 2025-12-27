@@ -26,3 +26,6 @@ train/*
 #Images with testing dataset
 test/
 test/*
+#Image Cache for later use
+./dataset_cache.pkl
+dataset_cache.pkl
