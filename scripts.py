@@ -6,6 +6,15 @@ class ImageObject:
     def __init__(self, data, label):
         self.data = data
         self.label = label
+        self.red = []
+        self.green = []
+        self.blue = []
+        for i in range(len(data)):
+            for j in range(len(data[i])):
+                r, g, b = data[i][j][0], data[i][j][1], data[i][j][2]
+                self.red.append(r)
+                self.blue.append(b)
+                self.green.append(g)
 
     def __repr__(self):
         return f"<ImageObject file={self.label} shape={self.data.shape}>"
@@ -13,7 +22,7 @@ class ImageObject:
 
 def load_cifar10():
     try:
-        with open("./dataset_cache.pkl", "rb") as f:
+        with open("../dataset_cache.pkl", "rb") as f:
             train_data, test_data = pickle.load(f)
         print("Success!")
         print(train_data[0])

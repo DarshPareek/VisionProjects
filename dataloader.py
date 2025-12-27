@@ -9,9 +9,15 @@ class ImageObject:
     def __init__(self, data, label):
         self.data = data
         self.label = label
+        self.red = data[:, :, 0]
+        self.green = data[:, :, 1]
+        self.blue = data[:, :, 2]
+        self.grayscale = np.dot(data[..., :3], [0.299, 0.587, 0.114])
 
     def __repr__(self):
-        return f"<ImageObject file={self.label} shape={self.data.shape}>"
+        return (
+            f"<ImageObject label={self.label} grayscale_shape={self.grayscale.shape}>"
+        )
 
 
 TRAIN_FOLDER = "./train"
